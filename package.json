@@ -1,8 +1,8 @@
 {
   "name": "kartotherian-demultiplexer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tile source that directs tile requests to different tile sources depending on the zoom level",
-  "main": "lib/demultiplexer.js",
+  "main": "demultiplexer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
