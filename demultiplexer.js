@@ -2,6 +2,8 @@
 
 let Promise = require('bluebird'),
     _ = require('underscore'),
+    checkType = require('kartotherian-input-validator'),
+    qidx = require('quadtile-index'),
     Err = require('kartotherian-err');
 
 let core;
@@ -10,20 +12,20 @@ let core;
 function Demultiplexer(uri, callback) {
     let self = this;
     Promise.try(function () {
-        let query = core.normalizeUri(uri).query,
+        let query = checkType.normalizeUrl(uri).query,
             sources = [];
         // process sourceN, fromN, beforeN - parse them into [{source:..., from:..., before:...}, ...]
         _.each(query, function (val, key) {
             _.each(['source', 'from', 'before'], function (type) {
                 if (key.substr(0, type.length) === type) {
-                    let ind = core.strToInt(key.substr(type.length));
+                    let ind = checkType.strToInt(key.substr(type.length));
                     // Assume that there can't be more than maxZoom different sources
-                    if (!core.isValidZoom(ind)) {
+                    if (!qidx.isValidZoom(ind)) {
                         throw new Err('Unexpected key "%s"', key);
                     }
                     if (type !== 'source') {
-                        val = core.strToInt(val);
-                        if (!core.isValidZoom(val)) {
+                        val = checkType.strToInt(val);
+                        if (!qidx.isValidZoom(val)) {
                             throw new Err('Invalid zoom "%s"', val);
                         }
                     }
