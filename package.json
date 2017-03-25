@@ -1,6 +1,6 @@
 {
   "name": "@kartotherian/demultiplexer",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Tile source that directs tile requests to different tile sources depending on the zoom level",
   "main": "demultiplexer.js",
   "scripts": {
