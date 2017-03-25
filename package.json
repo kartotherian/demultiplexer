@@ -1,27 +1,27 @@
 {
-  "name": "kartotherian-demultiplexer",
-  "version": "0.0.6",
+  "name": "@kartotherian/demultiplexer",
+  "version": "0.0.7",
   "description": "Tile source that directs tile requests to different tile sources depending on the zoom level",
   "main": "demultiplexer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kartotherian/kartotherian-demultiplexer.git"
-  },
+  "repository": "kartotherian/demultiplexer",
   "keywords": [
     "kartotherian",
     "tilelive"
   ],
   "author": "Yuri Astrakhan <YuriAstrakhan@gmail.com>",
   "license": "Apache-2.0",
-  "bugs": "https://github.com/kartotherian/kartotherian-demultiplexer/issues",
+  "bugs": "https://github.com/kartotherian/demultiplexer/issues",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "bluebird": "^3.3.5",
     "underscore": "^1.8.3",
-    "quadtile-index": "^0.0.3",
-    "kartotherian-input-validator": "^0.0.3",
-    "kartotherian-err": "^0.0.1"
+    "quadtile-index": "^0.0.5",
+    "@kartotherian/err": "^0.0.2",
+    "@kartotherian/input-validator": "^0.0.4"
   }
 }

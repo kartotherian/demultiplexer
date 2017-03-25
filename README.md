@@ -1,4 +1,6 @@
-# kartotherian-demultiplexer
+[![Build Status](https://travis-ci.org/kartotherian/demultiplexer.svg?branch=master)](https://travis-ci.org/kartotherian/demultiplexer)
+
+# @kartotherian/demultiplexer
 Tile source that directs tile requests to different tile sources depending on the zoom level
 
 ## Usage examples

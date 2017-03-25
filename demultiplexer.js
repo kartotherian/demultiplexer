@@ -2,9 +2,9 @@
 
 let Promise = require('bluebird'),
     _ = require('underscore'),
-    checkType = require('kartotherian-input-validator'),
+    checkType = require('@kartotherian/input-validator'),
     qidx = require('quadtile-index'),
-    Err = require('kartotherian-err');
+    Err = require('@kartotherian/err');
 
 let core;
 
