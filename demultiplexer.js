@@ -56,11 +56,15 @@ function Demultiplexer(uri, callback) {
         });
 
         self.sources = sources;
-        return core.mapSequentialAsync(sources, function (src) {
-            return core.loadSource(src.source).then(function (handler) {
-                src.handler = handler;
+        return Promise.each(
+            Object.keys(sources),
+            key => {
+                let src = sources[key];
+                return core.loadSource(src.source).then(
+                    handler => {
+                        src.handler = handler;
+                    });
             });
-        });
     }).return(this).nodeify(callback);
 }
 
