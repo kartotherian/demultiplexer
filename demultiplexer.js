@@ -70,7 +70,7 @@ function Demultiplexer(uri, callback) {
 
 Demultiplexer.prototype._getHandler = function(z) {
     if (z < self.sources[0].from || z >= self.sources[self.sources.length - 1].before) {
-        core.throwNoTile();
+        Err.throwNoTile();
     }
     let srcInd = _.sortedIndex(self.sources, {from: z}, function (v) {
         return v.from;
